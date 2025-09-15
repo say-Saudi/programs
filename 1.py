@@ -1,32 +1,29 @@
-'''
-Situation:
-I have a string, with spaces. 
+class Solution:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        '''OPTIMAL'''
+        mapper = {}
+        for index, num1 in enumerate(nums): # O(n)
+            num2 = target - num1
+            if num2 in mapper: # O(1)
+                return [mapper[num2] , index]
+            mapper[num1] = index
 
-Task:
-Need to reverse it while keeping the space index same. 
+        return [None]
+        '''
+        # BRUTE FORCE
+        # Move through the list and mark index and value of each number
+        for index, num in enumerate(nums): # O(n)
 
-Action:
-I can store space indexes in a list and simultaneously store characters in a temp list.
-Then I would run a loop in length of parent string and add space at stored space indexes and popped character from the temp list, at other positions. 
-After adding from temp list, I'd pop the last element.
+            # for each picked as first target parameter, there will be a temp list excluding that parameter
+            temp = [tnum for tindex, tnum in enumerate(nums) if tindex != index] # O(n-1) = O(n)
 
-Result:
-Done.
-'''
+            if target-num in temp: # O(n-1) = O(n)
+                return [index, temp.index(target-num)+1] # the second paramter resulting to target will always be to the right side of the first param, since we are sequencing fro mleft to right. This +1
+        return [None]
+        '''
 
-test_str = "Sau Di waka r"
 
-# Stores nonspace chars in a list 
-chars = [ch for ch in test_str if ch != ' '] 
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.twoSum([2,7,11,15], 26))
 
-# Stores space indexes in a list
-space_index = [i for i, ch in enumerate(test_str) if ch == ' ']
-
-result = []
-for i in range(len(test_str)):
-    if i in space_index:
-        result.append(" ")
-    else:
-        result.append(chars.pop())
-
-print("".join(result))

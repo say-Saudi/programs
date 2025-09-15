@@ -1,3 +1,3 @@
 # Programs
 
-1 - To reverse a string, while maintaining white space at the same index as in the parent one.
+[![1](https://img.shields.io/badge/leetcode%20prog-f89d16)](https://leetcode.com/problems/two-sum/description/) - Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
