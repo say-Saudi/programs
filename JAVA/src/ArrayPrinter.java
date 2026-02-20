@@ -52,13 +52,12 @@ Space Complexity: O(n), where n is the number of elements in the array
     - Generalise array printing to handle multi-dimensional arrays.
     - Function should handle arrays of different data types, automatically.
 */
+
 public class ArrayPrinter {
-    public static void main(String[] args) {
-        int[] arr = {12, 5, 99, 3, 56, 88};
-        printArray(arr);
-    }
 
     public static void printArray(int[] arr){
+        System.out.println();
+        System.out.print("Given Array: ");
         for(int num:arr){
             System.out.print(num + " ");
         }

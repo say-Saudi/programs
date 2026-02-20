@@ -57,10 +57,6 @@ Space Complexity: O(1), as only a single variable `sum` is used regardless of th
 
 */
 public class ArraySum {
-    public static void main(String[] args) {
-        int[] arr = {4, -2, 7, -3};
-        System.out.println("Sum of array: " + sumArray(arr));
-    }
 
     public static int sumArray(int[] arr) {
         int sum = 0;

@@ -32,7 +32,7 @@ Key idea: <main trick / observation>
 
 4. CODE
 
-<paste your code here>
+<see below for implementation>
 
 5. TEST
 
